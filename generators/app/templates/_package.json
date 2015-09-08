@@ -1,0 +1,36 @@
+{
+  "name": "<%= modName %>",
+  "version": "0.0.1",
+  "devDependencies": {
+    "browserify":"latest",
+    "watchify":"latest",
+    "jade":"latest",
+    "node-sass":"latest",
+    "http-server":"latest",
+    "npm-run-all":"latest",
+    "jshint":"latest",
+    "live-reload":"latest",
+    "opener":"latest",
+    "rimraf":"latest",
+    "karma":"latest",
+    "mocha":"latest",
+    "jshint":"latest"
+  },
+  "scripts": {
+    "clean": "rimraf dist/*",
+    "build:scripts": "browserify -d index.js -o dist/build.js",
+    "watch:scripts": "watchify -d index.js -o dist/build.js",
+    "build:views": "jade assets/views -o dist",
+    "watch:views": "jade -w assets/views -o dist",
+    "build:styles": "node-sass assets/styles -o dist",
+    "watch:styles": "node-sass -w assets/styles -o dist",
+    "build": "npm-run-all --parallel build:scripts build:views build:styles",
+    "watch": "npm-run-all --parallel watch:views build:styles watch:scripts watch:styles",
+    "live-reload": "live-reload --port 9091 dist/",
+    "serve": "http-server dist -o -p 9090",
+    "dev": "npm-run-all --parallel watch live-reload serve"
+  },
+  "author": {
+    "name": "<%= author %>"
+  }
+}
