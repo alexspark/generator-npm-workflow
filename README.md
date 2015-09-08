@@ -35,6 +35,16 @@ Finally, initiate the generator:
 yo npm-workflow
 ```
 
+To see which tasks are available:
+```bash
+npm run
+```
+
+To quick start developing run:
+```bash
+npm run dev
+```
+
 ## License
 
 MIT
