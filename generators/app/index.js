@@ -3,6 +3,7 @@ var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
 var _ = require('lodash');
+var mkdirp = require('mkdirp');
 
 module.exports = yeoman.generators.Base.extend({
   prompting: function () {
@@ -51,7 +52,6 @@ module.exports = yeoman.generators.Base.extend({
                       context);
 
       this.fs.write(this.destinationPath('assets/styles/main.scss'), '.klass { color: purple; }');
-      this.mkdir('dist');
     },
 
     projectfiles: function () {
@@ -63,6 +63,9 @@ module.exports = yeoman.generators.Base.extend({
         this.templatePath('jshintrc'),
         this.destinationPath('.jshintrc')
       );
+
+      mkdirp('dist');
+      mkdirp('test');
     }
   },
 

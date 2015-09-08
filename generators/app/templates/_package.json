@@ -10,7 +10,6 @@
     "npm-run-all":"latest",
     "jshint":"latest",
     "live-reload":"latest",
-    "opener":"latest",
     "rimraf":"latest",
     "karma":"latest",
     "mocha":"latest",
@@ -18,6 +17,8 @@
   },
   "scripts": {
     "clean": "rimraf dist/*",
+    "test": "mocha",
+    "watch:test": "mocha -w",
     "build:scripts": "browserify -d index.js -o dist/build.js",
     "watch:scripts": "watchify -d index.js -o dist/build.js",
     "build:views": "jade assets/views -o dist",
