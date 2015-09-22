@@ -1,0 +1,17 @@
+{
+  "name": "<%= modName %>",
+  "main": "index.js",
+  "version": "0.1.0",
+  "authors": [
+    <%= author %>
+  ],
+  "license": "Not Available",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

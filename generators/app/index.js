@@ -41,9 +41,14 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(this.templatePath('_package.json'),
                       this.destinationPath('package.json'),
                       context);
-      this.fs.copyTpl(this.templatePath('index.js'), 
-                      this.destinationPath('index.js'),
+      this.fs.copyTpl(this.templatePath('bower.json'),
+                      this.destinationPath('bower.json'),
                       context);
+      /*
+       *this.fs.copyTpl(this.templatePath('index.js'), 
+       *                this.destinationPath('index.js'),
+       *                context);
+       */
       this.fs.copyTpl(this.templatePath('index.jade'),
                       this.destinationPath('assets/views/index.jade'),
                       context);

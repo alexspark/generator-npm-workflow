@@ -1,5 +1,6 @@
 {
   "name": "<%= modName %>",
+  "main": "index.js",
   "version": "0.1.0",
   "devDependencies": {
     "browserify":"latest",
@@ -18,8 +19,8 @@
     "clean": "rimraf dist/*",
     "test": "mocha",
     "watch:test": "mocha -w",
-    "build:scripts": "browserify -d index.js -o dist/build.js",
-    "watch:scripts": "watchify -d index.js -o dist/build.js",
+    "build:scripts": "browserify -d index.js -o dist/build.js | tee index.js dist/build.js > /dev/null",
+    "watch:scripts": "watchify -d index.js -o 'tee index.js dist/build.js > /dev/null",
     "build:views": "jade assets/views -o dist",
     "watch:views": "jade -w assets/views -o dist",
     "build:styles": "node-sass assets/styles -o dist",
