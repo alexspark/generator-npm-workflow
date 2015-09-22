@@ -1,4 +1,4 @@
-var <%= modName %> = require("./assets/scripts/<%= modName %>");
+var <%= modJSName %> = require("./assets/scripts/<%= modFileName %>");
 
-global.<%= modName %> = <%= modName %>;
-module.exports = <%= modName %>;
+global.<%= modJSName %> = <%= modJSName %>;
+module.exports = <%= modJSName %>;

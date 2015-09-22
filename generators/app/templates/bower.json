@@ -1,9 +1,9 @@
 {
-  "name": "<%= modName %>",
+  "name": "<%= modFileName %>",
   "main": "index.js",
   "version": "0.1.0",
   "authors": [
-    <%= author %>
+    "<%= author %>"
   ],
   "license": "Not Available",
   "private": true,

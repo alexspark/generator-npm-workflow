@@ -34,7 +34,8 @@ module.exports = yeoman.generators.Base.extend({
     app: function () {
      
       var context = { 
-        modName:  _.camelCase(this.props.name),
+        modFileName:  this.props.name,
+        modJSName: _.camelCase(this.props.name),
         author: this.props.author 
       };
 
@@ -53,7 +54,7 @@ module.exports = yeoman.generators.Base.extend({
                       this.destinationPath('assets/views/index.jade'),
                       context);
       this.fs.copyTpl(this.templatePath('base.js'),
-                      this.destinationPath('assets/scripts/' + context.modName + '.js'),
+                      this.destinationPath('assets/scripts/' + context.modFileName + '.js'),
                       context);
 
       this.fs.write(this.destinationPath('assets/styles/main.scss'), '.klass { color: purple; }');

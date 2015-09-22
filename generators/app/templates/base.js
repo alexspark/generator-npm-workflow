@@ -1,3 +1,3 @@
-module.exports = function <%= modName %>() {
-  console.log("From <%= modName %>: Hello there, <%= author %>");
+module.exports = function <%= modJSName %>() {
+  console.log("From <%= modJSName %>: Hello there, <%= author %>");
 };
