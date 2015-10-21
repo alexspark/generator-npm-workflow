@@ -15,7 +15,7 @@ module.exports = yeoman.generators.Base.extend({
     var prompts = [{
       type: 'input',
       name: 'name',
-      message: 'What is the name of your module?',
+      message: 'what is the name of your module?',
       default: this.appname
     },{
       type: 'input',
@@ -32,10 +32,9 @@ module.exports = yeoman.generators.Base.extend({
 
   writing: {
     app: function () {
-     
       var context = { 
-        modFileName:  this.props.name,
-        modJSName: _.camelCase(this.props.name),
+        modFileName:  this.props.name.replace(/\s/g, '-'),
+        modJSName: _.capitalize(_.camelCase(this.props.name)),
         author: this.props.author 
       };
 
@@ -45,11 +44,9 @@ module.exports = yeoman.generators.Base.extend({
       this.fs.copyTpl(this.templatePath('bower.json'),
                       this.destinationPath('bower.json'),
                       context);
-      /*
-       *this.fs.copyTpl(this.templatePath('index.js'), 
-       *                this.destinationPath('index.js'),
-       *                context);
-       */
+      this.fs.copyTpl(this.templatePath('index.js'), 
+                      this.destinationPath('index.js'),
+                      context);
       this.fs.copyTpl(this.templatePath('index.jade'),
                       this.destinationPath('assets/views/index.jade'),
                       context);

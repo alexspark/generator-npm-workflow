@@ -1,6 +1,6 @@
 {
   "name": "<%= modFileName %>",
-  "main": "index.js",
+  "main": "build.js",
   "version": "0.1.0",
   "authors": [
     "<%= author %>"
